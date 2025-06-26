@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiIOSCollectionViewScrolled.MainPage">
+
+    <Grid>
+        <CollectionView x:Name="cv" IsGrouped="True"
+                        Scrolled="cv_Scrolled">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal"
+                                 Padding="10"
+                                 IsVisible="{Binding IsVisible}">
+                        <Label Text="{Binding Name}" />
+                        <Label Text="{Binding Description}" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+            <CollectionView.GroupHeaderTemplate>
+                <DataTemplate>
+                    <Label Text="{Binding Title}"
+                           FontAttributes="Bold"
+                           Padding="10" />
+                </DataTemplate>
+            </CollectionView.GroupHeaderTemplate>
+        </CollectionView>
+    </Grid>
+
+</ContentPage>
